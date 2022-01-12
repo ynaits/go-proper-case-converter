@@ -5,6 +5,7 @@ import (
   "fmt"
   "os"
   "strings"
+  "github.com/atotto/clipboard"
 )
 
 func main() {
@@ -19,9 +20,10 @@ func main() {
     // convert CRLF to LF
     text = strings.Replace(text, "\n", "", -1)
 
-	fmt.Println()
-	fmt.Println(properTitle(text))
-	fmt.Println()
+  converted:=properTitle(text)
+	fmt.Println(converted)
+  clipboard.WriteAll(converted)
+
   }
 
 }
