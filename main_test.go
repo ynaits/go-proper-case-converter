@@ -28,10 +28,11 @@ func TestProperTitle(t *testing.T) {
 	}{{in: "ABCDE", want: "ABCDE"},
 		{in: "xxxxx", want: "Xxxxx"},
 		{in: "ABCDE ABCDE small", want: "ABCDE ABCDE Small"},
+		{in: "ZXC", want: "ZXC"},
 	}
 
 	for _,test:= range tc{
-		got:=properTitle(test.in)
+		got:=properTitleCase(test.in)
 		if test.want != got {
 			t.Errorf("got %s, want %s", got, test.want)
 		}
