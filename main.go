@@ -19,7 +19,7 @@ func main() {
     text, _ := reader.ReadString('\n')
     // convert CRLF to LF
     text = strings.Replace(text, "\n", "", -1)
-
+fmt.Println(properTitle(text))
   converted:= properCase(text)
 	fmt.Println(converted)
   clipboard.WriteAll(converted)

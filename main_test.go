@@ -19,3 +19,22 @@ func TestProperCase(t *testing.T) {
 	}
 
 }
+
+
+func TestProperTitle(t *testing.T) {
+	tc := []struct {
+		in   string
+		want string
+	}{{in: "ABCDE", want: "ABCDE"},
+		{in: "xxxxx", want: "Xxxxx"},
+		{in: "ABCDE ABCDE small", want: "ABCDE ABCDE Small"},
+	}
+
+	for _,test:= range tc{
+		got:=properTitle(test.in)
+		if test.want != got {
+			t.Errorf("got %s, want %s", got, test.want)
+		}
+	}
+
+}
