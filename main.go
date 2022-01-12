@@ -19,14 +19,21 @@ func main() {
     text, _ := reader.ReadString('\n')
     // convert CRLF to LF
     text = strings.Replace(text, "\n", "", -1)
-  toLower:=strings.ToLower(text)
-  converted:=properTitle(toLower)
+
+  converted:= properCase(text)
 	fmt.Println(converted)
   clipboard.WriteAll(converted)
 
   }
 
 }
+
+
+func properCase(input string) string {
+  toLower:=strings.ToLower(input)
+  return properTitle(toLower)
+}
+
 
 func properTitle(input string) string {
     words := strings.Split(input, " ")
