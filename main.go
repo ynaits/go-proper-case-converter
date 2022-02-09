@@ -3,24 +3,35 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"github.com/atotto/clipboard"
 	"os"
 	"strings"
+
+	"github.com/TwiN/go-color"
+	"github.com/atotto/clipboard"
 )
 
 func main() {
 
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Println("Case Converter")
-	fmt.Println("=============")
-
+	fmt.Println("======================================================")
+	fmt.Println(color.Bold,"PROPER CASE CONVERTER",color.Reset)
+	fmt.Println(color.Colorize(color.Green," Build by: Ratheesh Rajan for YNA"))
+	fmt.Println(color.Colorize(color.Red," Copyright: YNA ITS"))
+	fmt.Println("")
+	fmt.Println(" How to use:")
+	fmt.Println(" -----------")
+	fmt.Println(" Enter or paste word or words, press ENTER key.")
+	fmt.Println(color.Colorize(color.Yellow," Converted text will copied to clipboard automatically!"))
+	fmt.Println("======================================================")
+	fmt.Println("")
 	for {
-		fmt.Print("Enter text to Convert :=> ")
+		fmt.Print("Enter texts to Convert :=> ")
 		text, _ := reader.ReadString('\n')
 		// convert CRLF to LF
 		text = strings.Replace(text, "\n", "", -1)
 		converted := properCase(text)
-		fmt.Println(converted)
+		fmt.Println(color.Colorize(color.Green, converted))
+
 		clipboard.WriteAll(converted)
 	}
 
