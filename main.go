@@ -16,7 +16,7 @@ func main() {
 	fmt.Println("======================================================")
 	fmt.Println(color.Bold,"PROPER CASE CONVERTER",color.Reset)
 	fmt.Println(color.Colorize(color.Green," Build by: Ratheesh Rajan for YNA"))
-	fmt.Println(color.Colorize(color.Red," Copyright: YNA ITS"))
+	fmt.Println(color.Colorize(color.Red," Copyright © 2022 YNA ITS"))
 	fmt.Println("")
 	fmt.Println(" How to use:")
 	fmt.Println(" -----------")
